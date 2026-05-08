@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aligned Foundation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Values-based religious discovery</p>
+        <h1>Find a faith tradition that fits the life you are trying to build.</h1>
+        <p class="lede">
+          This is not a truth detector or a personality quiz. It is a structured reflection tool that compares your values,
+          spiritual instincts, and non-negotiables with broad religious and denominational patterns.
+        </p>
+      </div>
+      <aside class="hero-panel">
+        <h2>How this helps</h2>
+        <ul>
+          <li>Surfaces traditions that may fit your moral and spiritual orientation.</li>
+          <li>Explains why each match appeared instead of hiding behind a score.</li>
+          <li>Highlights tensions and questions to verify in a real local community.</li>
+        </ul>
+      </aside>
+    </header>
+
+    <main class="layout">
+      <section class="panel intro-panel">
+        <h2>Use this with care</h2>
+        <p>
+          No religion is reducible to a checklist, and local communities often vary from the broad patterns represented here.
+          Treat the results as a grounded starting point for conversation, visits, and further study.
+        </p>
+        <div class="callout-grid">
+          <article>
+            <h3>What this measures</h3>
+            <p>Authority, ritual, inclusion, community structure, spirituality, moral reasoning, and the lived tone of belonging.</p>
+          </article>
+          <article>
+            <h3>What this does not measure</h3>
+            <p>Historical truth claims, the quality of a local congregation, or the depth of your own lived experience.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel coverage-panel">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Coverage</p>
+            <h2>What traditions are represented</h2>
+          </div>
+          <p class="section-note">The app now maps its scope to Pew's broad categories while still distinguishing major denominational families where those differences affect actual fit.</p>
+        </div>
+        <div id="coverage-grid" class="coverage-grid"></div>
+        <p id="coverage-note" class="coverage-note"></p>
+      </section>
+
+      <section class="panel form-panel">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Step 1</p>
+            <h2>Answer the alignment questions</h2>
+          </div>
+          <p class="section-note">Choose the point that best reflects where you want your foundation to be, not just where you have been.</p>
+        </div>
+        <form id="assessment-form">
+          <section class="preset-panel" aria-labelledby="preset-heading">
+            <div class="section-heading preset-heading-row">
+              <div>
+                <p class="eyebrow">Quick start</p>
+                <h3 id="preset-heading">Load a sample persona</h3>
+              </div>
+              <p class="section-note">Use one of these to stress-test the app, then adjust any answer by hand before you score it.</p>
+            </div>
+            <div id="presets" class="preset-grid"></div>
+            <p class="preset-feedback" id="preset-feedback">No preset loaded.</p>
+          </section>
+
+          <div id="questions" class="questions"></div>
+
+          <div class="section-heading filter-heading">
+            <div>
+              <p class="eyebrow">Step 2</p>
+              <h2>Mark your non-negotiables</h2>
+            </div>
+            <p class="section-note">These filters remove traditions that clearly conflict and flag traditions where local variation matters.</p>
+          </div>
+          <div id="filters" class="filters"></div>
+
+          <label class="reflection-block" for="reflection-notes">
+            <span>Reflection notes</span>
+            <textarea id="reflection-notes" name="reflection-notes" rows="5" placeholder="What experiences, hopes, or harms should you keep in view as you interpret your results?"></textarea>
+          </label>
+
+          <div class="action-row">
+            <button class="primary-button" type="submit">See aligned traditions</button>
+            <button class="ghost-button" type="button" id="reset-form">Reset</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="panel results-panel" id="results-panel" hidden>
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Step 3</p>
+            <h2>Your alignment results</h2>
+          </div>
+          <p class="section-note">Higher scores mean closer values alignment with the broad pattern represented here.</p>
+        </div>
+
+        <div class="summary-grid">
+          <article class="summary-card">
+            <h3>Interpret the score carefully</h3>
+            <p>
+              A strong score means your answers resemble this tradition's broad pattern. It does not mean the local congregation will be healthy,
+              safe, or kind.
+            </p>
+          </article>
+          <article class="summary-card" id="filter-summary">
+            <h3>Active filters</h3>
+            <p>No filters selected.</p>
+          </article>
+          <article class="summary-card" id="reflection-summary">
+            <h3>Your reflection</h3>
+            <p>Add a note above if you want your own story visible beside the results.</p>
+          </article>
+        </div>
+
+        <div id="results" class="results"></div>
+
+        <section class="share-panel" id="share-panel" aria-labelledby="share-heading">
+          <div class="section-heading share-heading-row">
+            <div>
+              <p class="eyebrow">Optional</p>
+              <h3 id="share-heading">Share anonymized results with the community</h3>
+            </div>
+            <p class="section-note">Nothing is shared unless you explicitly opt in below.</p>
+          </div>
+
+          <div class="share-consent-box">
+            <label class="share-consent-label">
+              <input id="share-consent" name="share-consent" type="checkbox">
+              <span>
+                <strong>I want to anonymously contribute this result set.</strong>
+                This saves your assessment and the optional demographic fields below to a local tracking file. No name or email is collected.
+              </span>
+            </label>
+            <p class="share-warning">
+              City, state or province, country, and demographics can still be identifying in some cases. Only opt in if you are comfortable sharing that combination.
+            </p>
+          </div>
+
+          <form id="share-form" class="share-form">
+            <div class="share-grid">
+              <label>
+                <span>Most recent religion</span>
+                <input type="text" id="share-recent-religion" name="recentReligion" disabled>
+              </label>
+              <label>
+                <span>Gender</span>
+                <input type="text" id="share-gender" name="gender" disabled>
+              </label>
+              <label>
+                <span>Age</span>
+                <input type="number" id="share-age" name="age" min="1" max="120" disabled>
+              </label>
+              <label>
+                <span>Race</span>
+                <input type="text" id="share-race" name="race" disabled>
+              </label>
+              <label>
+                <span>City</span>
+                <input type="text" id="share-city" name="city" disabled>
+              </label>
+              <label>
+                <span>State or province</span>
+                <input type="text" id="share-state-province" name="stateProvince" disabled>
+              </label>
+              <label>
+                <span>Country</span>
+                <input type="text" id="share-country" name="country" disabled>
+              </label>
+            </div>
+            <div class="share-action-row">
+              <button class="primary-button" type="submit" id="share-submit" disabled>Submit anonymized share</button>
+              <p id="share-status" class="share-status">Opt in to enable sharing.</p>
+            </div>
+          </form>
+
+          <div class="dashboard-callout">
+            <div>
+              <p class="eyebrow">Community view</p>
+              <h3>See where respondents are coming from</h3>
+              <p>Open a separate dashboard page with a global pin map and respondent filters based on self-reported location and demographic data from shared responses.</p>
+            </div>
+            <a class="ghost-button dashboard-link" href="/dashboard.html">View respondent dashboard</a>
+          </div>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
