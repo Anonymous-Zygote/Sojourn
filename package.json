@@ -1,0 +1,14 @@
+{
+  "name": "aligned-foundation",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Values-based religious alignment web app with automated browser tests.",
+  "scripts": {
+    "serve": "node server.js",
+    "test:e2e": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.54.2",
+    "http-server": "^14.1.1"
+  }
+}
